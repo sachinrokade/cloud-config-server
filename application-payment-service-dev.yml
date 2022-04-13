@@ -1,2 +1,39 @@
-msg :
-    payment-service
+spring:
+  zipkin:
+    base-url: http://localhost:9411/
+  h2:
+    console:
+      enabled: true
+  
+
+management:
+  endpoints:
+    web:
+      base-path: /actuator
+      exposure:
+        include: hystrix.stream, info, health
+      cors:
+        allowed-origins: 'true'
+  endpoint:
+    health:
+      enabled: 'true'
+      show-details: always
+hystrix:
+  dashboard:
+    proxy-stream-allow-list: 127.0.0.1
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    hostname: localhost
+    
+    
+microservice:
+  payment-service:
+    endpoints:
+      endpoint:
+        uri: http://PAYMENT-SERVICE/payment/doPayment
