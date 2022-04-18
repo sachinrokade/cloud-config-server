@@ -14,3 +14,9 @@ management:
     web:
       exposure:
         include: info,health,refresh
+        
+microservice:
+  order-service:
+    endpoints:
+      endpoint:
+        uri: http://ORDER-SERVICE/order/bookOrder    
