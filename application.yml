@@ -13,10 +13,10 @@ microservice:
     endpoints:
       endpoint:
         uri: http://PAYMENT-SERVICE/payment/doPayment
-        sqs_uri: http://AWS_SQS/payment/doSQSPayment
+        sqs_uri: http://AWS-SQS/payment/doSQSPayment
   order-service:
     endpoints:
       endpoint:
         uri: http://ORDER-SERVICE/order/bookOrder
-        sqs_uri: http://AWS_SQS/order/bookSQSOrder
+        sqs_uri: http://AWS-SQS/order/bookSQSOrder
         
