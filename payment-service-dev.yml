@@ -14,7 +14,7 @@ management:
     web:
       base-path: /actuator
       exposure:
-        include: hystrix.stream, info, health
+        include: hystrix.stream, info, health, refresh
       cors:
         allowed-origins: 'true'
   endpoint:
